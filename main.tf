@@ -1,3 +1,3 @@
 provider "alicloud" {
-  region = var.aws_region
+  region = var.alicloud_region
 }
