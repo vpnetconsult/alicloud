@@ -8,7 +8,7 @@ terraform {
 }
 
 resource "alicloud_vpc" "vpc" {
-  name       = "tcloud-resource"
+  vpc_name       = "tcloud-resource"
   cidr_block = "172.16.0.0/12"
 }
 
