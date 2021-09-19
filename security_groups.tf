@@ -1,4 +1,5 @@
 resource "alicloud_security_group" "vpn-inbound" {
+  name              = "tf-vpn-inbound"
   vpc_id = alicloud_vpc.vpc.id
 }
 
