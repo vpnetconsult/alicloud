@@ -14,5 +14,5 @@ locals {
   prefix   = "worker"
   domain   = "vpnet.app"
   hostname = "${local.prefix}.${local.domain}"
-  zone     = "eu-central-1"
+  zone     = "eu-central-1a"
 }
