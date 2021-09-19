@@ -1,12 +1,3 @@
-terraform {
-  required_providers {
-    alicloud = {
-      source = "hashicorp/alicloud"
-      version = "1.135.0"
-    }
-  }
-}
-
 provider "alicloud" {}
 
 # Some useful variables to reduce copy-paste, you can add whatever you like
