@@ -8,7 +8,7 @@ output "default-vpc-id" {
 }
 
 resource "alicloud_vswitch" "vswitch" {
-  name              = "validator_subnet"
+  vswitch_name              = "validator_subnet"
   # Use the VPC's ID
   vpc_id            = alicloud_vpc.vpc.id
   # Set the CIDR for this switch, must be in the CIDR of the VPC
