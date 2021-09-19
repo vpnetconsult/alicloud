@@ -9,6 +9,6 @@ resource "alicloud_vswitch" "default" {
   # Set the CIDR for this switch, must be in the CIDR of the VPC
   cidr_block        = "172.16.0.0/12"
   # As the VPC is a region-specified resource, switches are for zones
-  availability_zone = region
+  availability_zone = local.zone
 }
 
