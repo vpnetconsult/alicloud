@@ -7,9 +7,7 @@ terraform {
   }
 }
 
-provider "alicloud" {
-  region = var.alicloud_region
-}
+provider "alicloud" {}
 
 # Some useful variables to reduce copy-paste, you can add whatever you like
 locals {
