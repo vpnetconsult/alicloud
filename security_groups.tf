@@ -16,7 +16,7 @@ resource "alicloud_security_group" "vpn-outbound" {
 resource "alicloud_security_group_rule" "vpn-udp" {
   type              = "ingress"
   ip_protocol       = "udp"
-  nic_type          = "intranet"
+  description       = "default-ingress"
   policy            = "accept"
   port_range        = "1/65535"
   priority          = 1
@@ -27,7 +27,7 @@ resource "alicloud_security_group_rule" "vpn-udp" {
 resource "alicloud_security_group_rule" "ssh-in" {
   type              = "ingress"
   ip_protocol       = "tcp"
-  nic_type          = "intranet"
+  description       = "ssh-access"
   policy            = "accept"
   port_range        = "22/22"
   priority          = 1
@@ -38,7 +38,7 @@ resource "alicloud_security_group_rule" "ssh-in" {
 resource "alicloud_security_group_rule" "tf-udp" {
   type              = "ingress"
   ip_protocol       = "udp"
-  nic_type          = "intranet"
+  description       = "tf-udp"
   policy            = "accept"
   port_range        = "1/65535"
   priority          = 1
@@ -49,7 +49,7 @@ resource "alicloud_security_group_rule" "tf-udp" {
 resource "alicloud_security_group_rule" "tf-tcp" {
   type              = "ingress"
   ip_protocol       = "tcp"
-  nic_type          = "intranet"
+  description       = "tf-tcp"
   policy            = "accept"
   port_range        = "1/65535"
   priority          = 1
@@ -60,7 +60,7 @@ resource "alicloud_security_group_rule" "tf-tcp" {
 resource "alicloud_security_group_rule" "tf-853" {
   type              = "ingress"
   ip_protocol       = "tcp"
-  nic_type          = "intranet"
+  description       = "tf-853"
   policy            = "accept"
   port_range        = "853/853"
   priority          = 1
