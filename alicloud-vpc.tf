@@ -1,5 +1,5 @@
 resource "alicloud_vpc" "vpc" {
-  vpc_name       = "tcloud-resource"
+  vpc_name       = "helium_vpc"
   cidr_block = "172.16.0.0/12"
 }
 
@@ -8,6 +8,7 @@ output "default-vpc-id" {
 }
 
 resource "alicloud_vswitch" "vswitch" {
+  name              = "validator_subnet"
   # Use the VPC's ID
   vpc_id            = alicloud_vpc.vpc.id
   # Set the CIDR for this switch, must be in the CIDR of the VPC
