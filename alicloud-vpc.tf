@@ -14,6 +14,6 @@ resource "alicloud_vswitch" "vswitch" {
 
 output "subnet_cidr_blocks" {
   description = "The vswitch cidr block"
-  value = alicloud_vswitch.vswitches.*.cidr_block
+  value = alicloud_vswitch.vswitch.*.cidr_block
 }
 
