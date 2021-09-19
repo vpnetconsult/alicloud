@@ -9,7 +9,7 @@ terraform {
 
 resource "alicloud_vpc" "vpc" {
   name       = "tcloud-resource"
-  cidr_block = "10.0.0.0/16"
+  cidr_block = "10.0.0.0/8"
 }
 
 resource "alicloud_vswitch" "vsw-web" {
