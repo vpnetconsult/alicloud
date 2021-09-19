@@ -24,6 +24,6 @@ resource "alicloud_security_group_rule" "ssh-in" {
   cidr_ip           = "0.0.0.0/0"
 }
 
-output "sg-vpn-inbound" { value = alicloud_security_group.vpn-inbound.id }
-output "sg-ssh" { value = alicloud_security_group.ssh.id }
-output "sg-vpn-outbound" { value = alicloud_security_group.vpn-outbound.id }
+# output "sg-vpn-inbound" { value = alicloud_security_group.vpn-inbound.id }
+# output "sg-ssh" { value = alicloud_security_group.ssh.id }
+# output "sg-vpn-outbound" { value = alicloud_security_group.vpn-outbound.id }
