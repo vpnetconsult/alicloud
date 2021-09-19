@@ -15,6 +15,6 @@ resource "alicloud_vpc" "vpc" {
 resource "alicloud_vswitch" "vsw-web" {
   name              = "subnet-tcloud"
   vpc_id            = alicloud_vpc.vpc.id
-  cidr_block        = "172.16.0.0./12"
+  cidr_block        = "172.16.0.0/12"
   availability_zone = "eu-central-1"
 }
