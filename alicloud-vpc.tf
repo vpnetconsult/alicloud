@@ -21,12 +21,12 @@ resource "alicloud_cs_serverless_kubernetes" "serverless" {
   name                           = var.my_ask_name
   version                        = "1.22.3-aliyun.1"
   vpc_id                         = alicloud_vpc.vpc.id
-  vswitch_ids                    = [alicloud_vswitch.vswitch.id,alicloud_vswitch.test_vswitch_bak.id]
+  vswitch_ids                    = [alicloud_vswitch.vswitch.id]
   new_nat_gateway                = true
   endpoint_public_access_enabled = true
   deletion_protection            = false
   load_balancer_spec             = "slb.s2.small"
-  time_zone                      = "Asia/Shanghai" 
+  time_zone                      = "eu-central-1a" 
   service_cidr                   = "172.21.0.0/20"
   service_discovery_types        = ["PrivateZone"]
 }
