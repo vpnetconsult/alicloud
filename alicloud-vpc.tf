@@ -18,7 +18,7 @@ resource "alicloud_vswitch" "vswitch" {
 }
 
 resource "alicloud_cs_serverless_kubernetes" "serverless" {
-  name                           = var.my_ask_name
+  name                           = "vpnet_serverless"
   version                        = "1.22.3-aliyun.1"
   vpc_id                         = alicloud_vpc.vpc.id
   vswitch_ids                    = [alicloud_vswitch.vswitch.id]
