@@ -27,7 +27,7 @@ resource "alicloud_cs_serverless_kubernetes" "serverless" {
   deletion_protection            = false
   load_balancer_spec             = "slb.s2.small"
   time_zone                      = "Asia/Shanghai" 
-  service_cidr                   = "172.16.0.0/24"
+  service_cidr                   = "172.24.0.0/20"
   service_discovery_types        = ["PrivateZone"]
 }
 
