@@ -1,12 +1,13 @@
 
-resource "alicloud_fc_service" "vpnet_service" {
-  description  = "My Function Compute service"
+resource "alicloud_oss_bucket" "demo" {
+   bucket = "demo"
+   depends_on = [
+      data.external.archive
+   ]
 }
 
-resource "alicloud_fc_function" "vpnet_function" {
-  handler          = "index.handler"
-  runtime          = "nodejs10"
-  memory_size      = 128
-  timeout          = 3
+resource "alicloud_oss_bucket_object" "demo" {
+   bucket = alicloud_oss_bucket.demo.bucket
+   key = "function/demo.zip"
+   source = "demo.zip"
 }
-
