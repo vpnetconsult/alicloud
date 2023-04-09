@@ -1,7 +1,10 @@
 resource "alicloud_api_gateway" "vpnet_api_gateway" {
-  name = "vpnet-api-gateway"
-  description = "My API Gateway"
-  internet = true
+  name          = "vpnet-api-gateway"
+  description   = "My API Gateway"
+  internet      = true
+  instance_type = "SLB"
+  vpc_id        = alicloud_vpc.vpc.id
+  vswitch_id    = alicloud_vswitch.vswitch.id
 }
 
 resource "alicloud_api_group" "vpnet_api_group" {
