@@ -1,12 +1,12 @@
 
 resource "alicloud_fc_service" "vpnet_service" {
-  service_name = "vpnet-service"
+  service_name = "test"
   description  = "My Function Compute service"
 }
 
 resource "alicloud_fc_function" "vpnet_function" {
   function_name    = "vpnet-function"
-  service_name     = alicloud_fc_service.my_service.service_name
+  service_name     = alicloud_fc_service.vpnet_service.test
   handler          = "index.handler"
   runtime          = "nodejs10"
   memory_size      = 128
