@@ -20,4 +20,15 @@ resource "alicloud_cs_serverless_kubernetes" "serverless" {
     "k-aa" = "v-aa"
     "k-bb" = "v-aa"
   }
+    # addons 
+  addons {
+    # SLB Ingress
+    name = "alb-ingress-controller"
+  }
+  addons {
+    name = "metrics-server"
+  }
+  addons {
+    name = "knative"
+  }
 }
