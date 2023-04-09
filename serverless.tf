@@ -1,43 +1,31 @@
-resource "alicloud_api_gateway_group" "apiGroup" {
-  name        = "ApiGatewayGroup"
-  description = "description of the api group"
+resource "alicloud_api_gateway" "vpnet_api_gateway" {
+  name = "vpnet-api-gateway"
+  description = "My API Gateway"
+  internet = true
 }
 
-resource "alicloud_api_gateway_api" "apiGatewayApi" {
-  name              = alicloud_api_gateway_group.apiGroup.name
-  group_id          = alicloud_api_gateway_group.apiGroup.id
-  description       = "your description"
-  auth_type         = "APP"
-  force_nonce_check = false
+resource "alicloud_api_group" "vpnet_api_group" {
+  name = "vpnet-api-group"
+  description = "My API Group"
+  api_gateway_id = alicloud_api_gateway.vpnet_api_gateway.id
+}
 
+resource "alicloud_api_gateway_api" "vpnet_api" {
+  name = "vpnet-api"
+  description = "My API"
+  group_id = alicloud_api_group.vpnet_api_group.id
+  visibility = "PUBLIC"
+  auth_type = "APP"
   request_config {
-    protocol = "HTTP"
-    method   = "GET"
-    path     = "/test/path1"
-    mode     = "MAPPING"
+    request_protocol = "https"
+    request_http_method = "GET"
+    request_path = "/test"
+    body_format = "FORM"
+    post_body_description = "test body description"
   }
-
-  service_type = "HTTP"
-
-  http_service_config {
-    address   = "http://apigateway-backend.alicloudapi.com:8080"
-    method    = "GET"
-    path      = "/web/cloudapi"
-    timeout   = 12
-    aone_name = "cloudapi-openapi"
+  service_config {
+    service_protocol = "http"
+    service_http_method = "GET"
+    service_path = "/test"
   }
-
-  request_parameters {
-    name         = "aaa"
-    type         = "STRING"
-    required     = "OPTIONAL"
-    in           = "QUERY"
-    in_service   = "QUERY"
-    name_service = "testparams"
-  }
-
-  stage_names = [
-    "RELEASE",
-    "TEST",
-  ]
 }
