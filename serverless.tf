@@ -13,7 +13,7 @@ resource "alicloud_cs_serverless_kubernetes" "serverless" {
   # Enable log service, A project named k8s-log-{ClusterID} will be automatically created
   logging_type = "SLS"
   # Select an existing sls project
-  # sls_project_name             = ""
+  sls_project_name             = var.name
 
   # tags 
   tags = {
