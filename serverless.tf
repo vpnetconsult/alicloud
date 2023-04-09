@@ -1,9 +1,6 @@
 
 resource "alicloud_oss_bucket" "demo" {
    bucket = "demo"
-   depends_on = [
-      data.external.archive
-   ]
 }
 
 resource "alicloud_oss_bucket_object" "demo" {
