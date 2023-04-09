@@ -20,3 +20,4 @@ resource "alicloud_cs_serverless_kubernetes" "serverless" {
     "k-aa" = "v-aa"
     "k-bb" = "v-aa"
   }
+}
