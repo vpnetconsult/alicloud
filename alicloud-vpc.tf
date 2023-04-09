@@ -1,6 +1,6 @@
 resource "alicloud_vpc" "vpc" {
   vpc_name       = "helium_vpc"
-  cidr_block = "172.16.0.0/12"
+  cidr_block = "10.0.0.0/16"
 }
 
 output "default-vpc-id" {
@@ -12,7 +12,7 @@ resource "alicloud_vswitch" "vswitch" {
   # Use the VPC's ID
   vpc_id            = alicloud_vpc.vpc.id
   # Set the CIDR for this switch, must be in the CIDR of the VPC
-  cidr_block        = "172.16.0.0/24"
+  cidr_block        = "10.0.1.0/24"
   # As the VPC is a region-specified resource, switches are for zones
   zone_id = local.zone
 }
