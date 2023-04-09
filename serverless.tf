@@ -11,8 +11,6 @@ resource "alicloud_fc_function" "vpnet_function" {
   runtime          = "nodejs10"
   memory_size      = 128
   timeout          = 3
-  code_file        = "path/to/your/function/code"
-  code_filename    = "index.js"
   environment_vars = {
     API_URL = "https://vpnet.app/api"
   }
