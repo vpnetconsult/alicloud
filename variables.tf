@@ -1,1 +1,3 @@
-
+variable "name" {
+  default = "vpnet"
+}
