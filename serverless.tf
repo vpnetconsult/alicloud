@@ -7,7 +7,7 @@ resource "alicloud_cs_serverless_kubernetes" "serverless" {
   deletion_protection            = false
 
   load_balancer_spec      = "slb.s2.small"
-  time_zone               = local.zone
+  time_zone               = "Asia/Shanghai"
   service_cidr            = "172.21.0.0/20"
   service_discovery_types = ["PrivateZone"]
   # Enable log service, A project named k8s-log-{ClusterID} will be automatically created
